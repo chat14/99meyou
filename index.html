@@ -1,0 +1,89 @@
+<doctype html="">
+<html>
+<head>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+	
+	<mets charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> </head>
+<link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+  </link>
+<meta name=“keywords” content=“seo,search engine,google,search engine,cupid chat, cupid, valentines day, dating, foreign dating, prostitution, matchmaking agency ，” />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="cupid chat">
+
+<mets data_path="https://github.com/chat14/callnumber">
+  <link rel="stylesheet" type="text/css" href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css"/>
+
+<style>
+body {
+background-color: #d24dff
+}
+    .box
+    {
+        display:  box;
+        width:auto;
+        background-color:#eee;
+        border:1px solid  #666666;
+        border-spacing:5px;/*cellspacing:poor IE support for  this*/
+       /* border-collapse:separate;*/
+    }
+    </style>
+	</head>
+	<bod>
+		<h1>cupid chat </h1>
+		
+<marquee bgcolor="#A9E0B8" direction="lefe" scrollamount="5">
+
+The purchase is economy, please capture proof after payment is completed. For questions and to send a chat, please type the name of the message page: phone number, price, address, country.
+</marquee>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="V7VME8MU3XW6N">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG_global.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+chat+commine
+<div><input id="input"  placeholder="message" /></div>
+Chat Output
+<div id=box></div>
+<script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
+
+<script> (function() {
+        var pubnub = new PubNub({
+            publishKey: 'demo',
+            subscribeKey: 'demo'
+        });
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var box = $('box'),
+            input = $('input'),
+            channel = '10chat-demo';
+        pubnub.addListener({
+            message: function(obj) {
+                box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
+            }
+        });
+        pubnub.subscribe({
+            channels: [channel]
+        });
+        input.addEventListener('keyup', function(e) {
+            if ((e.keyCode || e.charCode) === 13) {
+                pubnub.publish({
+                    channel: channel,
+                    message: input.value,
+                    x: (input.value = '')
+                });
+            }
+        });
+    })();
+</script>
+</bod>
+</html>
